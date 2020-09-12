@@ -65,7 +65,7 @@ pipeline {
         branch 'development'
        }
        steps {
-         cloudBeesFlowTriggerRelease configuration: 'Thunder-CD', parameters: '{"release":{"releaseName":"verisign-chat-app", "stages":[{"stageName":"Release Readiness","stageValue":true},{"stageName":"Pre-Prod","stageValue":true},{"stageName":"Prod","stageValue":true}], "pipelineName":"pipeline_tj-Spring-Boot-WebSocket","parameters":[]}}', projectName: 'emartinez Demo', releaseName: 'verisign-chat-app', startingStage: 'Release Readiness'
+         cloudBeesFlowTriggerRelease configuration: 'Thunder-CD', parameters: '{"release":{"releaseName":"chat-app-scratch-pad", "stages":[{"stageName":"Release Readiness","stageValue":true},{"stageName":"Pre-Prod","stageValue":false},{"stageName":"Prod","stageValue":false}], "pipelineName":"pipeline_newPipeline","parameters":[]}}', projectName: 'emartinez Demo', releaseName: 'chat-app-scratch-pad', startingStage: 'Release Readiness'
        }
      }
   }  

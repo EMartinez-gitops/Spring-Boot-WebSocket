@@ -51,7 +51,7 @@ pipeline {
     }
     stage('Deploy to Nexus') {
       when {
-        branch 'master'
+        branch 'development'
       }
       steps {
         container('maven') {
@@ -62,10 +62,10 @@ pipeline {
     }
      stage('Trigger Release Candidate') {
        when {
-        branch 'master'
+        branch 'development'
        }
        steps {
-         cloudBeesFlowTriggerRelease configuration: 'Thunder-CD', parameters: '{"release":{"releaseName":"tj-Spring-Boot-WebSocket", "stages":[{"stageName":"Release Readiness","stageValue":true},{"stageName":"Pre-Prod","stageValue":true},{"stageName":"Prod","stageValue":true}], "pipelineName":"pipeline_tj-Spring-Boot-WebSocket","parameters":[]}}', projectName: 'tjohnson Demo', releaseName: 'tj-Spring-Boot-WebSocket', startingStage: 'Release Readiness'
+         cloudBeesFlowTriggerRelease configuration: 'Thunder-CD', parameters: '{"release":{"releaseName":"verisign-chat-app", "stages":[{"stageName":"Release Readiness","stageValue":true},{"stageName":"Pre-Prod","stageValue":true},{"stageName":"Prod","stageValue":true}], "pipelineName":"pipeline_tj-Spring-Boot-WebSocket","parameters":[]}}', projectName: 'emartinez Demo', releaseName: 'verisign-chat-app', startingStage: 'Release Readiness'
        }
      }
   }  
